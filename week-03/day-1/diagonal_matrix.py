@@ -20,4 +20,8 @@ for i in range(4):
     matrix.append(sub_matrix)
     
     
-print(matrix)
+for i in matrix:
+    for k in i:
+        print(k, end= " ")
+    print()
+    
