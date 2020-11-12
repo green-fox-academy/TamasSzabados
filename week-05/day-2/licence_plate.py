@@ -15,7 +15,7 @@ def licence_finder(file_name = "words.txt"):
             f = f.readlines() 
             for line in f:
                
-                if line.find(user_input[0:3]) != -1:
+                if line.find(user_input[0:3].lower()) != -1:
                     words_list.append(line)
 
             
