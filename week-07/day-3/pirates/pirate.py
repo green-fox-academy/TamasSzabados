@@ -14,14 +14,23 @@ class Pirate:
             print("Pour me anudder!")
         elif self.count > 4 and self.alive == True::
             print("Arghh, I'ma Pirate. How d'ya d'ink its goin?")
-        else:
+        elif self.alive == False:
             print("he's dead")
 
     def die(self):
         self.alive = False
 
-    #brawl(x) - where pirate fights another pirate (if that other pirate is alive) and there's a 1/3 chance, 
-    # 1 dies, the other dies or they both pass out.
+    def brawl(self, pirate):
+        if pirate.alive == True:
+            if random.random() < 0.33:
+                self.alive = False
+
+            elif 0.33 <= random.random() <= 0.66:
+                pirate.alive = False
+                self.alive = False
+
+            elif random.random() > 0.66:
+                pirate.alive = False
 
     def add_parrot(self, parrot):
         self.parrot = parrot
