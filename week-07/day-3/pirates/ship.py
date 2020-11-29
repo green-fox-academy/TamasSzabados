@@ -1,4 +1,5 @@
 from pirate import Pirate
+import random
 
 class Ship:
     def __init__(self, name):
@@ -13,7 +14,7 @@ class Ship:
         for i in range(random.randint(1, len(pirate))):
             self.crew.append(pirate[i])
             if pirate[i].alive == True:
-                self.crew +=1
+                self.alive_crew +=1
 
         return self.captain, self.crew
 
@@ -22,16 +23,29 @@ class Ship:
         + str(captain.alive) + 'alive pirates in the crew' + str(self.alive_crew) + ')'
 
     def battle(self, other_ship):
-        ship1_score = self.alive_crew - self.captin.count/4
-        ship2_score = other_ship.alive_crew -other_ship.captin.count/4
+        ship1_score = self.alive_crew - self.captain.count
+        ship2_score = other_ship.alive_crew - other_ship.captain.count
         if ship1_score > ship2_score:
+            for i in range(random.randint(1, len(self.crew))):
+                self.crew[i].drinkSomeRum()
+            
+            for i in range(random.randint(1, len(other_ship.crew))):
+                other_ship.crew[i].die()
+            print(self.name + " won the battle")
             return True
+            
+        else:
+            for i in range(random.randint(1, len(other_ship.crew))):
+                other_ship.crew[i].drinkSomeRum()
+            for i in range(random.randint(1, len(self.crew))):
+                self.crew[i].die()
+            print(other_ship.name + " won the battle")
+            return False
+
+
         
 
-   
-#calculate score: Number of Alive pirates in the crew - Number of consumed rum by the captain
-#The loser crew has a random number of losses (deaths).
-#The winner captain and crew has a party, including a random number of rum :)
+
 
         
     
