@@ -18,6 +18,10 @@ class Armada:
             else:
                 self.ships.remove(self.ships[i])
                 i += 1
+
+            if i < len(self.ships) and j == len(armada.ships):
+                return True
+
             
  
 
