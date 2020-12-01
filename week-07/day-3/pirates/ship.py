@@ -6,17 +6,19 @@ class Ship:
         self.name = name
         self.crew = []
         self.captain = None
-        self.alive_crew = 0
+        self.alive_crew = 0 #get_alive_crew_count function instead
         
 
-    def fillShip(self, captain, pirate):
+    def fillShip(self, captain, pirates):
         self.captain = captain
-        for i in range(random.randint(1, len(pirate))):
-            self.crew.append(pirate[i])
-            if pirate[i].alive == True:
-                self.alive_crew +=1
+        #random number 0,10
+        #cikluson belül kalóz
+        for i in range(random.randint(1, len(pirates))):
+            self.crew.append(pirates[i])
+            if pirates[i].alive == True:
+                self.alive_crew +=1 #function 
 
-        return self.captain, self.crew
+        
 
     def __str__(self):
         return 'Captain(name='+ captain.name+', rum drinked='+str(captain.count)+'captain is alive'

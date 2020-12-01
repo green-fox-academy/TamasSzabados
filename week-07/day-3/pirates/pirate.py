@@ -11,11 +11,11 @@ class Pirate:
         
 
     def howsItGoingMate(self):
-        if self.count <= 4 and self.alive == True:
+        if self.count <= 4 and self.alive:
             print("Pour me anudder!")
-        elif self.count > 4 and self.alive == True:
+        elif self.count > 4 and self.alive:
             print("Arghh, I'ma Pirate. How d'ya d'ink its goin?")
-        elif self.alive == False:
+        elif not self.alive:
             print("he's dead")
 
     def die(self):
@@ -23,19 +23,15 @@ class Pirate:
 
     def brawl(self, pirate):
         if pirate.alive == True:
-            if random.random() < 0.33:
+            chance = random.random()
+            if chance < 0.33:
                 self.alive = False
-                return self.alive
-
-            elif 0.33 <= random.random() <= 0.66:
+            elif 0.33 <= chance <= 0.66:
                 pirate.alive = False
                 self.alive = False
-                return pirate.alive, self.alive
-
-            elif random.random() > 0.66:
+            elif chance > 0.66:
                 pirate.alive = False
-                return pirate.alive
-
+                
     def add_parrot(self, parrot):
         self.parrot = parrot
 
