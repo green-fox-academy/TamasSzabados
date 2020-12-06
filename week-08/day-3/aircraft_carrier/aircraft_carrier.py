@@ -25,7 +25,7 @@ class Aircrafts():
     def get_status(self):
         print(f" Type: {self.__class__.__name__} , Ammo: {self.ammo} , Base Damage: {self.base_damage}, All Damage: {self.all_damage}")
     
-
+    @static
     def is_priority(self):
         if str(self.__class__.__name__) = "F16":
             return False
