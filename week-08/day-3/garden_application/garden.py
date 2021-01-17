@@ -2,51 +2,63 @@ class Garden():
     def __init__(self):
         self.plants = []
         
-    def add(self, plant):
+    def add_plant(self, plant):
         self.plants.append(plant)
 
-    @property
-    def get_plants(self):
-        return self.plants
-
-    def describe_garden(self):
+    def remove_plant(self, plant):
+        self.plants.remove(plant)
+    
+    def water_needed(self):
+        count_water = 0
         for i in self.plants:
-            if isinstance(i, Trees):
+            if isinstance(i, Flower):
+                water_needed = 5 - i.water
+                if water_needed > 0:
+                    count_water +=1     
+            else:
+                water_needed = 10 - i.water
+                if water_needed > 0:
+                    count_water +=1
+        return count_water
+
+    def water(self,num):
+        count_water = self.water_needed()
+        equal_water = num / count_water
+        for i in self.plants:
+            if isinstance(i, Tree):
                 if i.water < 10:
-                    print(f"The {i.name} {self.__class__.__name__} needs water")
-                else:
-                    print(f"The {i.name} {self.__class__.__name__} doesnt need water")
-
-            if isinstance(i, Flowers):
-                if i.water < 4:
-                    print(f"The {i.name} {self.__class__.__name__} needs water")
-                else:
-                    print(f"The {i.name} {self.__class__.__name__} doesnt need water")
-
-    def watering(self, num):
+                    i.water += (equal_water * i.absorbing_rate)
+            if isinstance(i, Flower):
+                if i.water < 5:
+                    i.water += (equal_water * i.absorbing_rate)
         print(f"Watering with {num}")
-        equal_water = num/len(self.plants)
+        self.info()
+
+    def info(self):
         for i in self.plants:
-            if isinstance(i, Trees):
+            if isinstance(i, Tree):
                 if i.water < 10:
-                    i.water += (equal_water * i.absorption)
-            if isinstance(i, Flowers):
-                if i.water < 4:
-                    i.water += (equal_water * i.absorption)        
-        
-        self.describe_garden()
+                    print(f"The {i.color} {i.__class__.__name__} needs water")
+                else:
+                    print(f"The {i.color} {i.__class__.__name__} doesnt need water")
+
+            if isinstance(i, Flower):
+                if i.water < 5:
+                    print(f"The {i.color} {i.__class__.__name__} needs water")
+                else:
+                    print(f"The {i.color} {i.__class__.__name__} doesnt need water")
 
 
-class Trees():
-    absorption = 0.75
-    def __init__(self,name):
-        self.name = name
-        self.water = 2
+class Flower():
+    absorbing_rate = 0.75
+    def __init__(self, color):
+        self.color = color
+        self.water = 0
 
-class Flowers(Garden):
-    absorption = 0.4
-    def __init__(self,name):
-        self.name = name
-        self.water = 3
+class Tree():
+    absorbing_rate = 0.4
+    def __init__(self, color):
+        self.color = color
+        self.water = 0
 
         
