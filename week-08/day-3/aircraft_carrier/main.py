@@ -1,5 +1,5 @@
-from aircraft_carrier import Aircrafts, F16, F35, Carrier
-
+from aircraft import Aircraft, F16, F35
+from carrier import Carrier
 
 def main():
     tomcat = F16()
@@ -17,7 +17,7 @@ def main():
     typhoon.fight()
     typhoon.refill(20)
     print(typhoon.refill(20))
-    typhoon.get_status()
+    print(typhoon.get_status())
     print(typhoon.is_priority())
 
     nimitz = Carrier(1000,500)
@@ -28,9 +28,9 @@ def main():
     nimitz.add(panther)
     nimitz.add(lightning)
     nimitz.add(typhoon)
-    nimitz.get_status()
+    print(nimitz.get_status())
     nimitz.fill()
-    nimitz.get_status()
+    print(nimitz.get_status())
 
     enterprise = Carrier(500,100)
 
@@ -40,14 +40,14 @@ def main():
     enterprise.add(panther)
     enterprise.add(lightning)
     enterprise.add(typhoon)
-    enterprise.get_status()
+    print(enterprise.get_status())
     enterprise.fill()
-    enterprise.get_status()
+    print(enterprise.get_status())
 
     enterprise.fight(nimitz)
-    enterprise.get_status()
+    print(enterprise.get_status())
     nimitz.get_status()
-
+   
 
 
 
