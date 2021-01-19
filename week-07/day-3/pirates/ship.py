@@ -1,58 +1,51 @@
-from pirate import Pirate
 import random
+from pirate import Pirate
 
-class Ship:
-    def __init__(self, name):
-        self.name = name
-        self.crew = []
+class Ship():
+    def __init__(self):
+        self.pirates = []
         self.captain = None
-      
-        
 
-    def fillShip(self, captain):
-        self.captain = captain
-        pirates_num = random.randint(6,10)
-        for i in range(pirates_num):
-            pirate = Pirate("Jack" + str(i))
-            self.crew.append(pirate)
-            
+    def fill_ship(self):
+        if self.captain == None:
+            captain = Pirate()
+            self.captain = captain
+        for i in range(1, random.randint(3,10)):
+            pirate = Pirate()
+            self.pirates.append(pirate)
 
-    def get_alive(self):
-        alive_crew = 0
-        for i in self.crew:
+    def info(self):
+        count_alive = 0
+        captain_alive = ""
+        for i in self.pirates:
             if i.alive:
-                alive_crew +=1
-        return alive_crew
-
-    def __str__(self):
-        return 'Captain(name='+ captain.name+', rum drinked='+str(captain.count)+'captain is alive'
-        + str(captain.alive) + 'alive pirates in the crew' + str(self.get_alive()) + ')'
-
-    def battle(self, other_ship):
-        ship1_score = self.get_alive() - self.captain.count
-        ship2_score = other_ship.get_alive() - other_ship.captain.count
-        if ship1_score > ship2_score:
-            for i in range(random.randint(1, len(self.crew))):
-                self.crew[i].drinkSomeRum()
-            
-            for i in range(random.randint(1, len(other_ship.crew))):
-                other_ship.crew[i].die()
-            print(self.name + " won the battle")
-            return True
-            
+                count_alive += 1
+        if self.captain.alive:
+            captain_alive = "is alive"
         else:
-            for i in range(random.randint(1, len(other_ship.crew))):
-                other_ship.crew[i].drinkSomeRum()
-            for i in range(random.randint(1, len(self.crew))):
-                self.crew[i].die()
-            print(other_ship.name + " won the battle")
+            captain_alive = "has died"
+        return count_alive, captain_alive
+
+    def __repr__(self):
+        return f"The captain consumed {self.captain.intoxicated} rum, and he {self.info()[1]} the number of alive pirates in the crew is {self.info()[0]}"
+
+    def battle(self, ship):
+        score = self.info()[0] - self.captain.intoxicated
+        enemy = ship.info()[0] - ship.captain.intoxicated
+
+        if score > enemy:
+            for i in range(random.randint(0,len(ship.pirates))):
+                ship.pirates[i].die()
+            for i in range(random.randint(0, len(self.pirates))):
+                self.pirates[i].drink_some_rum()
+            return True
+
+        else:
+            for i in range(random.randint(0,len(self.pirates))):
+                self.pirates[i].die()
+            for i in range(random.randint(0, len(ship.pirates))):
+                ship.pirates[i].drink_some_rum()
             return False
 
 
-        
-
-
-
-        
-    
 

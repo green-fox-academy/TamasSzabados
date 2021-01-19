@@ -1,19 +1,21 @@
-class Pirate:
-    def __init__(self, name):
-        self.name = name
-        self.count = 0
+import random
+
+class Pirate():
+    def __init__(self):
+        self.intoxicated = 0
         self.alive = True
-        self.parrot = ""
+        self.parrot = False
 
-    def drinkSomeRum(self):
-        self.count += 1
-        return self.count
-        
+    def drink_some_rum(self):
+        if self.alive:
+            self.intoxicated += 1
+        else:
+            print("he's dead")
 
-    def howsItGoingMate(self):
-        if self.count <= 4 and self.alive:
+    def hows_it_going_mate(self):
+        if self.intoxicated < 5 and self.alive:
             print("Pour me anudder!")
-        elif self.count > 4 and self.alive:
+        elif self.intoxicated >= 5 and self.alive:
             print("Arghh, I'ma Pirate. How d'ya d'ink its goin?")
         elif not self.alive:
             print("he's dead")
@@ -22,6 +24,7 @@ class Pirate:
         self.alive = False
 
     def brawl(self, pirate):
+        chance = random.random()
         if pirate.alive == True:
             chance = random.random()
             if chance < 0.33:
@@ -31,8 +34,13 @@ class Pirate:
                 self.alive = False
             elif chance > 0.66:
                 pirate.alive = False
-                
-    def add_parrot(self, parrot):
-        self.parrot = parrot
+                self.parrot()
 
+    def parrot(self):
+        self.parrot = True
+    
+
+
+
+    
 
