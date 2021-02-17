@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<books>
+    <book id="1">
+        <title> The Da Vinci Code </title>
+        <writer> Dan Brown </writer>
+        <publicationdate> 2003 </publicationdate>
+        <description>While in Paris, Harvard symbologist Robert Langdon is awakened by a phone call in the dead of the night. 
+            The elderly curator of the Louvre has been murdered inside the museum, his body covered in baffling symbols. As Langdon and gifted 
+            French cryptologist Sophie Neveu sort through the bizarre riddles, they are stunned to discover 
+        </description>
+        <publisher>Goodreads Author</publisher>
+        <langueage>english</langueage>
+        <isbn>ISBN 9780307277671</isbn>
+        <quotes>
+            <quote1>“Men go to far greater lengths to avoid what they fear than to obtain what they desire.” </quote1>
+            <quote2>“Faith ― acceptance of which we imagine to be true, that which we cannot prove.”</quote2>
+            <qoute3>“Everyone loves a conspiracy.”</qoute3>
+        </quotes>
+    </book>
+    <book id="2">
+        <title> Angels &/ Demons </title>
+        <writer> Dan Brown </writer>
+        <publicationdate> 2000 </publicationdate>
+        <description>World-renowned Harvard symbologist Robert Langdon is summoned to a Swiss research facility to analyze 
+            a cryptic symbol seared into the chest of a murdered physicist. What he 
+            discovers is unimaginable: a deadly vendetta against the Catholic Church 
+            by a centuries-old underground organization -- the Illuminati. 
+        </description>
+        <publisher>Goodreads Author</publisher>
+        <langueage>english</langueage>
+        <isbn>ISBN 9780302214356</isbn>
+        <quotes>
+            <quote1>“Men go to far greater lengths to avoid what they fear than to obtain what they desire.” </quote1>
+            <quote2>“Faith ― acceptance of which we imagine to be true, that which we cannot prove.”</quote2>
+            <qoute3>“Everyone loves a conspiracy.”</qoute3>
+        </quotes>
+    </book>
+    <book id="3">
+        <title> Deception Point </title>
+        <writer> Dan Brown </writer>
+        <publicationdate> 2001 </publicationdate>
+        <description> When a NASA satellite discovers an astonishingly rare object buried deep in the Arctic ice, 
+            the floundering space agency proclaims a much-needed victory—a victory with profound 
+            implications for NASA policy and the impending presidential election. 
+        </description>
+        <publisher>Goodreads Author</publisher>
+        <langueage>english</langueage>
+        <isbn>ISBN 9780302214356</isbn>
+        <quotes>
+            <quote1>“Men go to far greater lengths to avoid what they fear than to obtain what they desire.” </quote1>
+            <quote2>“Faith ― acceptance of which we imagine to be true, that which we cannot prove.”</quote2>
+            <qoute3>“Everyone loves a conspiracy.”</qoute3>
+        </quotes>
+    </book>
+</books>
