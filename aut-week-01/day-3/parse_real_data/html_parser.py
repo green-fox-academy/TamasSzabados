@@ -7,12 +7,8 @@ with open("leviatan.html", "r",encoding="utf8") as f:
     print(tree)
 
     #getting genres
-    genres = tree.xpath('/html/body/div[2]/div[3]/div[1]/div[2]/div[5]/div[7]/div/div[2]/div/div/div/a/text()')
+    genres = tree.xpath('/html/body/div[2]/div[3]/div[1]/div[2]/div[5]/div[7]/div/div[2]/div/div/div/a[1]/text()')
 print(genres)
-
-for i in range(len(genres)-1):
-    if genres[i] == "Space" and genres[i+1] == "Space Opera":
-        genres.remove(genres[i])
 
 genres_dict ={}
 
