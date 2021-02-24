@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Workshop: innerHTML, textContent</title>
+    <link rel="stylesheet" type="text/css" href="style.css"/>
+  </head>
+  <body>
+    <ul>
+      <li>placeholder</li>
+      <li>placeholder</li>
+      <li>placeholder</li>
+      <li>placeholder</li>
+    </ul>
+    <script>
+        const arr = ['apple', 'banana', 'cat', 'dog']
+        li = document.querySelectorAll("li")
+        var counter = 0
+        for (let i of li){
+            i.innerHTML = arr[counter];
+            counter ++;
+        };
+        ul = document.querySelector("ul");
+        ul.setAttribute("class","limegreen");
+    
+    </script>
+
+    
+    
+  </body>
+</html>
