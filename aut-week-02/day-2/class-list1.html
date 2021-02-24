@@ -24,6 +24,19 @@
     <p class="cat red-dot">cat</p>
     <p>dolphin</p>
 
+    <script>
+        paragraphs = document.querySelectorAll("p");
+        if (paragraphs[3].getAttribute("class", "dolphin")){
+            paragraphs[0].innerHTML = "pear";
+        }
+        else if(paragraphs[0].getAttribute("class","apple")){
+            paragraphs[2].innerHTML = "dog";
+        }
+        paragraphs[0].classList.add("red");
+        paragraphs[1].style.borderRadius = "10%";
+
+    </script>
+
     <!-- You can work in the html or in a separate js file. Like:
     <script>
       If the fourth p has a 'dolphin' class, replace apple's content with 'pear'
