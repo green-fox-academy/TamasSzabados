@@ -5,7 +5,7 @@ export default class Whitebarpine extends Tree {
         super(height);
     }
     irrigate(){
-        this.height += 2
+        this.height += 2;
     }
 }
 

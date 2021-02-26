@@ -1,9 +1,5 @@
 import Tree from './tree.js'
-
-export default class LumberJack extends Tree {
-    constructor(height = 0){
-        super(height = 0);
-    }
+export default class LumberJack  {
     
     cutTree(tree){
         if (this.height >4){

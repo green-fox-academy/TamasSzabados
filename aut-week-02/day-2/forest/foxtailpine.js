@@ -5,7 +5,7 @@ export default class Foxtailpine extends Tree {
         super(height);
     }
     irrigate(){
-        this.height += 1
+        this.height += 1;
     }
 }
 

@@ -26,10 +26,10 @@
 
     <script>
         paragraphs = document.querySelectorAll("p");
-        if (paragraphs[3].getAttribute("class", "dolphin")){
+        if (paragraphs[3].classList.contains("dolphin")){
             paragraphs[0].innerHTML = "pear";
         }
-        else if(paragraphs[0].getAttribute("class","apple")){
+        else if(paragraphs[0].classList.contains("apple")){
             paragraphs[2].innerHTML = "dog";
         }
         paragraphs[0].classList.add("red");
