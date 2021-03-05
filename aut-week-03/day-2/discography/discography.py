@@ -3,17 +3,14 @@ from requests.exceptions import HTTPError
 from lxml import html
 
 try:
-    url = "https://musicboard.app/artist/182/releases"
+    url = "https://en.wikipedia.org/wiki/Red_Hot_Chili_Peppers_discography"
     resp = requests.get(url)  
     resp.raise_for_status()  
     tree = html.fromstring(resp.content)
-    print(resp.text)
-    album_titles = tree.xpath('.//*[@id="root"]/div/div/div/div[3]/div[2]/div[1]/div[1]/div[2]/div[4]/a/div/h6//text()')
-    print(album_titles)
-
-  
-    #for title in album_titles:
-        #print(title)
+    album_titles = tree.xpath('/html/body/div[3]/div[3]/div[5]/div[1]/table[2]/tbody/tr/th/i/a/text()')
+                               
+    for title in album_titles:
+        print(title)
 
 except HTTPError as http_err:
         print(f'HTTP error occurred: {http_err}')  
