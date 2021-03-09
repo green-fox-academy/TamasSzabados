@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>My movie page</title>
+  <meta name="movie website" content="movies">
+  <meta name="Tamás" content="SitePoint">
+
+  <link rel="stylesheet" href="{{url_for('static', filename='styles.css')}}">
+</head>
+
+<body>
+  <header>
+    <h1>Jupiter Ascending </h1>
+  </header>
+  <article>
+    <p> TJupiter Jones was born under a night sky, with signs predicting that she was destined for great things.
+         Now grown, Jupiter dreams of the stars but wakes up to the cold reality of a job cleaning other 
+         people's houses and an endless run of bad breaks. Only when Caine Wise, a genetically engineered ex-military hunter, 
+         arrives on Earth to track her down does Jupiter begin to glimpse the fate that has been waiting for her all along - 
+        her genetic signature marks her as next in line for an extraordinary inheritance that could alter the balance of the cosmos.
+    </p>
+    <a href="{{ url_for('index') }}">Home</a>
+  </article>
+  <script></script>
+</body>
+</html>

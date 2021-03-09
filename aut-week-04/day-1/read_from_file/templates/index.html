@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>My movie page</title>
+  <meta name="movie website" content="movies">
+  <meta name="Tamás" content="movies">
+  <link rel="stylesheet" href="{{url_for('static', filename='styles.css')}}">
+</head>
+
+<body>
+  <header>
+    <h1>My movie page</h1>
+  </header>
+  <article>
+    <ul> 
+      <li><a href="{{ url_for('movie', movie_id = 1)}}">Matrix</a></li>
+      <li><a href="{{ url_for('movie', movie_id = 1)}}">Fight club</a></li>
+      <li><a href="{{ url_for('movie', movie_id = 1)}}">Jupiter Ascending</a></li>
+      <li><a href="{{ url_for('movie', movie_id = 1)}}">The Wolf of Wall Street</a></li>
+      <li><a href="{{ url_for('movie', movie_id = 1)}}">Pulp Fiction</a></li>
+    </ul>
+  </article>
+  <script></script>
+</body>
+</html>

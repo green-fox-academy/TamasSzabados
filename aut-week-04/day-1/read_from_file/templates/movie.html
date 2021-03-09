@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>My movie page</title>
+  <meta name="movie website" content="movies">
+  <meta name="Tamás" content="movies">
+
+  <link rel="stylesheet" href="{{url_for('static', filename='styles.css')}}">
+</head>
+
+<body>
+  <header>
+    <h1>{{header}} </h1>
+  </header>
+  <article>
+    <p> {{paragraph}}
+    </p>
+    <a href="{{ url_for('index') }}">Home</a>
+  </article>
+  <script></script>
+</body>
+</html>

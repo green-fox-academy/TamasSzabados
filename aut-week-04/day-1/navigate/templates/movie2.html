@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>My movie page</title>
+  <meta name="movie website" content="movies">
+  <meta name="Tamás" content="SitePoint">
+
+  <link rel="stylesheet" href="{{url_for('static', filename='styles.css')}}">
+</head>
+
+<body>
+  <header>
+    <h1>Fight Club </h1>
+  </header>
+  <article>
+    <p> A nameless first person narrator (Edward Norton) attends support groups in attempt to 
+        subdue his emotional state and relieve his insomniac state. When he meets Marla (Helena Bonham Carter), another 
+        fake attendee of support groups, his life seems to become a little more bearable. However when he associates himself 
+        with Tyler (Brad Pitt) he is dragged into an underground fight club and soap making scheme. Together the two men spiral 
+        out of control and engage in competitive rivalry for love and power. When the narrator is exposed 
+        to the hidden agenda of Tyler's fight club, he must accept the awful truth that Tyler may not be who he says he is.
+    </p>
+    <a href="{{ url_for('index') }}">Home</a>
+  </article>
+  <script></script>
+</body>
+</html>
