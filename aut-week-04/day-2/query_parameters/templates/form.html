@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>Form</title>
+	<meta name="author" content="Szabados Tamás">
+  <link rel="stylesheet" href="#" type="text/css"  charset="utf-8">
+ 
+</head>
+<body>
+<form action="{{ url_for('data') }}" method="post">
+      <legend>Search form</legend>
+      <p><label>Product name</label>
+        <input type="text" name="name" value="" id="name"></p>  
+    <p><input type="submit" name="submit" value="Search" class="button"></p>
+  </form>
+  </body>
+  </html>
