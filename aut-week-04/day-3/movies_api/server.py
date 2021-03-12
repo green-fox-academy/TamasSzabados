@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, render_template, url_for
 import json
 
 app = Flask(__name__)
@@ -74,6 +74,24 @@ def movie(movie_id):
                 return jsonify([{"error": "No movie found with <movie_id> ID"}]),404
         else:
             return jsonify(["inncorrect api key"]),403
+
+@app.route('/movies', methods=['GET'])
+def welcome():
+    return render_template('index.html', data=data)
+
+@app.route('/edit-movie/<movie_id>', methods=['GET','POST'])
+def edit_movie(movie_id):
+    if request.method == 'GET':
+        return render_template('edit_form.html', movie_id=movie_id)
+    else:
+        pass
+
+@app.route('/add-movie', methods=['GET','POST'])
+def add_movie():
+    if request.method == 'GET':
+        return render_template('create_form.html')
+    else:
+        pass
 
 
 if __name__ == '__main__':

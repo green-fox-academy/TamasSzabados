@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>movie page</title>
+	<meta name="author" content="Szabados Tamás">
+  <link rel="stylesheet" href="#" type="text/css"  charset="utf-8">
+ 
+</head>
+<body>
+  <header>
+    <h1>My movie page</h1>
+  </header>
+  <p> <a href="{{ url_for('add_movie') }}">Add a new movie</a></p>
+  <article>
+      <h3>All available movies in teh database</h3>
+    <ul> 
+        {%for i in data%} 
+            <li>{{i["title"]}}</li> 
+        {%endfor%} 
+    </ul> 
+  </article>
+  <script></script>
+</body>
+  </html>
