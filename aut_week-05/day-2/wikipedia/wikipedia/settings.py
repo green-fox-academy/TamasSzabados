@@ -1,4 +1,4 @@
-# Scrapy settings for amazon project
+# Scrapy settings for wikipedia project
 #
 # For simplicity, this file contains only settings considered important or
 # commonly used. You can find more settings consulting the documentation:
@@ -7,15 +7,14 @@
 #     https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 #     https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 
-BOT_NAME = 'amazon'
+BOT_NAME = 'wikipedia'
 
-SPIDER_MODULES = ['amazon.spiders']
-NEWSPIDER_MODULE = 'amazon.spiders'
-
+SPIDER_MODULES = ['wikipedia.spiders']
+NEWSPIDER_MODULE = 'wikipedia.spiders'
 
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
-#USER_AGENT = 'amazon (+http://www.yourdomain.com)'
+#USER_AGENT = 'wikipedia (+http://www.yourdomain.com)'
 
 # Obey robots.txt rules
 ROBOTSTXT_OBEY = True
@@ -26,13 +25,13 @@ ROBOTSTXT_OBEY = True
 # Configure a delay for requests for the same website (default: 0)
 # See https://docs.scrapy.org/en/latest/topics/settings.html#download-delay
 # See also autothrottle settings and docs
-DOWNLOAD_DELAY = 6
+# DOWNLOAD_DELAY = 3
 # The download delay setting will honor only one of:
-CONCURRENT_REQUESTS_PER_DOMAIN = 16
-CONCURRENT_REQUESTS_PER_IP = 16
+#CONCURRENT_REQUESTS_PER_DOMAIN = 16
+#CONCURRENT_REQUESTS_PER_IP = 16
 
 FEED_FORMAT="csv"
-FEED_URI="amazon.csv"
+FEED_URI="wiki.csv"
 
 # Disable cookies (enabled by default)
 #COOKIES_ENABLED = False
@@ -49,13 +48,13 @@ FEED_URI="amazon.csv"
 # Enable or disable spider middlewares
 # See https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 #SPIDER_MIDDLEWARES = {
-#    'amazon.middlewares.AmazonSpiderMiddleware': 543,
+#    'wikipedia.middlewares.WikipediaSpiderMiddleware': 543,
 #}
 
 # Enable or disable downloader middlewares
 # See https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 #DOWNLOADER_MIDDLEWARES = {
-#    'amazon.middlewares.AmazonDownloaderMiddleware': 543,
+#    'wikipedia.middlewares.WikipediaDownloaderMiddleware': 543,
 #}
 
 # Enable or disable extensions
@@ -67,7 +66,7 @@ FEED_URI="amazon.csv"
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
 #ITEM_PIPELINES = {
-#    'amazon.pipelines.AmazonPipeline': 300,
+#    'wikipedia.pipelines.WikipediaPipeline': 300,
 #}
 
 # Enable and configure the AutoThrottle extension (disabled by default)

@@ -1,4 +1,4 @@
-# Scrapy settings for amazon project
+# Scrapy settings for amazon2 project
 #
 # For simplicity, this file contains only settings considered important or
 # commonly used. You can find more settings consulting the documentation:
@@ -7,15 +7,14 @@
 #     https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 #     https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 
-BOT_NAME = 'amazon'
+BOT_NAME = 'amazon2'
 
-SPIDER_MODULES = ['amazon.spiders']
-NEWSPIDER_MODULE = 'amazon.spiders'
-
+SPIDER_MODULES = ['amazon2.spiders']
+NEWSPIDER_MODULE = 'amazon2.spiders'
 
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
-#USER_AGENT = 'amazon (+http://www.yourdomain.com)'
+#USER_AGENT = 'amazon2 (+http://www.yourdomain.com)'
 
 # Obey robots.txt rules
 ROBOTSTXT_OBEY = True
@@ -49,13 +48,13 @@ FEED_URI="amazon.csv"
 # Enable or disable spider middlewares
 # See https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 #SPIDER_MIDDLEWARES = {
-#    'amazon.middlewares.AmazonSpiderMiddleware': 543,
+#    'amazon2.middlewares.Amazon2SpiderMiddleware': 543,
 #}
 
 # Enable or disable downloader middlewares
 # See https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 #DOWNLOADER_MIDDLEWARES = {
-#    'amazon.middlewares.AmazonDownloaderMiddleware': 543,
+#    'amazon2.middlewares.Amazon2DownloaderMiddleware': 543,
 #}
 
 # Enable or disable extensions
@@ -67,7 +66,7 @@ FEED_URI="amazon.csv"
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
 #ITEM_PIPELINES = {
-#    'amazon.pipelines.AmazonPipeline': 300,
+#    'amazon2.pipelines.Amazon2Pipeline': 300,
 #}
 
 # Enable and configure the AutoThrottle extension (disabled by default)
