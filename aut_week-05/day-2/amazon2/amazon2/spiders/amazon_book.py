@@ -8,21 +8,21 @@ class AmazonBookSpider(scrapy.Spider):
 
     def parse(self, response):
         print("procesing:"+response.url)
-        products = response.xpath("//div[@class='s-main-slot s-result-list']")
-        
+        product = response.xpath("//span[@class='a-size-medium a-color-base a-text-normal']/text()").getall()
+        price = response.xpath("//span[@class='a-price-whole']/text()").getall()
+        ratings = response.xpath("//a[@class='a-link-normal']/span[@class='a-size-base' and 1]/text()").getall()
+             
         print(product)                        
       
-        for product in products:
-            
-            rating = product.xpath("//a[@class='a-link-normal']/span[@class='a-size-base' and 1]/text()").get()
-            if rating is None:
-                rating = "not available"
-            
-            yield {
-                "product": product.xpath("//span[@class='a-size-medium a-color-base a-text-normal']/text()").get(),
-                "price": product.xpath("//span[@class='a-price-whole']/text()").get(),
-                "ratings": rating
+        for i in range(len(product)-1):
+            try:
+                yield {
+                    "product": product[i],
+                    "price": price[i],
+                    "ratings": ratings[i]
                 }
+            except Exception:
+                print("error occurred")
             
 
         next_path = response.xpath("//li[@class='a-last']/a[1]/@href").get()
